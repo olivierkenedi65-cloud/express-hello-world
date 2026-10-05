@@ -1,7 +1,4 @@
-const express = require('express');
-const app = express();
-const port = process.env.PORT || 3000;
-app.get('/', (req,res)=>{
-res.sendFile(__dirname+'/index.html');
-});
-app.listen(port,()=>console.log('ok'));
+const express=require('express');
+const app=express();
+app.get('/',(req,res)=>{res.send('<body style=background:#000;color:#fff;text-align:center;padding:30px;font-family:sans-serif><h1 style=color:#0f8>MANDZX</h1><div style=background:#111;padding:20px;border-radius:15px;max-width:350px;margin:auto><div id=p style=background:#222;height:120px;display:flex;align-items:center;justify-content:center;font-size:40px;font-weight:900;margin-bottom:15px>LOGO</div><input id=t value=MANDZX style=width:90%;padding:10px oninput=p.innerText=this.value><br><br><button style=padding:12px;background:#0f8;border:0;border-radius:8px;width:100% onclick="let c=document.createElement(`canvas`);c.width=800;c.height=800;let x=c.getContext`2d`;x.fillStyle=`#000`;x.fillRect(0,0,800,800);x.fillStyle=`#fff`;x.font=`bold 70px sans-serif`;x.textAlign=`center`;x.fillText(t.value,400,400);let a=document.createElement`a`;a.download=`logo.png`;a.href=c.toDataURL();a.click()">TELECHARGER</button></div>')});
+app.listen(process.env.PORT||3000);
