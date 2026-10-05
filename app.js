@@ -2,6 +2,6 @@ const express = require('express');
 const app = express();
 const port = process.env.PORT || 3000;
 app.get('/', (req,res)=>{
-res.send('<html><head><meta name="viewport" content="width=device-width,initial-scale=1"><style>body{background:#000;color:#fff;font-family:sans-serif;text-align:center;padding:20px}h1{color:#0f8;font-size:32px}.box{background:#111;border-radius:15px;padding:20px;max-width:400px;margin:auto}input{width:100%;padding:12px;border-radius:8px;border:1px solid #333;background:#000;color:#fff;margin:10px 0}button{width:100%;padding:14px;background:#0f8;border:none;border-radius:8px;font-weight:bold}#p{width:100%;height:180px;background:#0a0a0a;display:flex;align-items:center;justify-content:center;font-size:40px;font-weight:900;margin:15px 0;border-radius:12px}</style></head><body><h1>MANDZX</h1><div class=box><div id=p>LOGO</div><input id=t value=MANDZX oninput="p.innerText=this.value"><button onclick="var c=document.createElement(&apos;canvas&apos;);c.width=1024;c.height=1024;var x=c.getContext(&apos;2d&apos;);x.fillStyle=&apos;#000&apos;;x.fillRect(0,0,1024,1024);x.fillStyle=&apos;#fff&apos;;x.font=&apos;900 100px sans-serif&apos;;x.textAlign=&apos;center&apos;;x.fillText(t.value,512,512);var a=document.createElement(&apos;a&apos;);a.download=&apos;logo.png&apos;;a.href=c.toDataURL();a.click()">Telecharger</button></div></body></html>');
+res.sendFile(__dirname+'/index.html');
 });
 app.listen(port,()=>console.log('ok'));
