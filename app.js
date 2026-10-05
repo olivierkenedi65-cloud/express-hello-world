@@ -1,1 +1,9 @@
-const e=require('express');const a=e();a.get('/',(r,s)=>s.send('<body style=background:#000;color:#fff;text-align:center;padding:30px;font-family:sans-serif><h1 style=color:#0f8>MANDZX</h1><div id=p style=background:#222;height:120px;display:flex;align-items:center;justify-content:center;font-size:50px;font-weight:900;margin:20px>LOGO</div><input id=t value=MANDZX style=padding:10px;width:80% oninput=p.innerText=this.value><br><br><button style=padding:12px;background:#0f8;border:0;width:80% onclick=c=document.createElement(`canvas`);c.width=800;c.height=800;x=c.getContext`2d`;x.fillStyle=`#000`;x.fillRect(0,0,800,800);x.fillStyle=`#fff`;x.font=`900 70px sans-serif`;x.textAlign=`center`;x.fillText(t.value,400,450);a=document.createElement`a`;a.download=`logo.png`;a.href=c.toDataURL();a.click()>TELECHARGER</button>'));a.listen(process.env.PORT||3000)
+const express = require('express');
+const app = express();
+const PORT = process.env.PORT || 10000;
+
+app.get('/', (req,res)=>{
+res.send(`<!DOCTYPE html><html><head><meta name="viewport" content="width=device-width,initial-scale=1"><style>body{margin:0;background:#000;color:#fff;font-family:Arial;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh}h1{font-size:18vw;font-weight:900;line-height:0.9;letter-spacing:-5px;text-align:center;margin:0;background:linear-gradient(#fff,#888);-webkit-background-clip:text;-webkit-text-fill-color:transparent}button{margin-top:30px;padding:15px 40px;border-radius:50px;border:0;background:#fff;color:#000;font-weight:900;font-size:18px}</style></head><body><h1>MANDZX<br>LOGO</h1><button onclick="alert('Telecharger - MANDZX v1')">TELECHARGER</button></body></html>`);
+});
+
+app.listen(PORT,()=>console.log('Live'));
